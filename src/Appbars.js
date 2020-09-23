@@ -24,9 +24,6 @@ const useStyles = makeStyles((theme) => ({
   list: {
     marginBottom: theme.spacing(2),
   },
-  subheader: {
-    backgroundColor: theme.palette.background.paper,
-  },
   appBar: {
     top: 'auto',
     bottom: 0,
@@ -41,15 +38,6 @@ const useStyles = makeStyles((theme) => ({
     left: 0,
     right: 0,
     margin: '0 auto',
-  },
-  icon: {
-    color: 'red',
-    '&:hover': {
-      color: '#e55039',
-    },
-  },
-  checkIcon: {
-    color: 'green',
   },
 }));
 
@@ -88,6 +76,7 @@ export default function Appbar(props) {
             <React.Fragment key={index}>
               <TodoList
                 id={index}
+                date={itemval.date}
                 title={itemval.title}
                 details={itemval.details}
                 onSelect={deleteItems}

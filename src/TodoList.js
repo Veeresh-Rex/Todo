@@ -1,6 +1,6 @@
 import React from 'react';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemAvatar from '@material-ui/core/ListItemAvatar';
+import { ListItemAvatar, ListSubheader } from '@material-ui/core';
 import ListItemText from '@material-ui/core/ListItemText';
 import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
@@ -16,11 +16,15 @@ const useStyles = makeStyles((theme) => ({
   checkIcon: {
     color: 'green',
   },
+  subheader: {
+    backgroundColor: theme.palette.background.paper,
+  },
 }));
 export default function TodoList(props) {
   const classes = useStyles();
   return (
     <div>
+      <ListSubheader className={classes.subheader}>{props.date}</ListSubheader>
       <ListItem>
         <ListItemAvatar>
           <CheckCircleOutlineIcon className={classes.checkIcon} />

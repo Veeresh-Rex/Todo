@@ -14,6 +14,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function BasicTextFields(props) {
   const todo = {
+    date: '',
     title: '',
     details: '',
   };
@@ -33,7 +34,18 @@ export default function BasicTextFields(props) {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    addOr(values);
+    var today = new Date();
+    values.date =
+      today.getDate() +
+      '/' +
+      (today.getMonth() + 1) +
+      '/' +
+      today.getFullYear() +
+      '  ' +
+      today.getHours() +
+      ':' +
+      today.getMinutes();
+    addOr(values); //////////////Current time
   };
   const classes = useStyles();
 
