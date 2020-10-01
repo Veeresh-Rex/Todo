@@ -71,7 +71,7 @@ export default function BasicTextFields(props) {
         id='name'
         name='details'
         value={values.details}
-        label='Discription'
+        label='Description'
         type='text'
         onChange={handleChangeInput}
         fullWidth
